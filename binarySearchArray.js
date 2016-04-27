@@ -1,23 +1,27 @@
 function binarySearch (array, target) {
-  var recurse = function(start, end, mod) {
-      var middle = Math.floor((end-start)/2) + start;
-      
-      if(target===array[middle]) {
-          return middle;
-      }
-      
-      else if(array[middle]===array[0] || array[middle]===array[array.length-1]) {
-          return -1;
-      }
-      
-      else if(target < array[middle]) {
-          return recurse(start, middle);
-      }
-      
-      else if(target > array[middle]) {
-          return recurse(middle+1, end);
-      }
-  };
-  
-  return recurse(0, array.length-1);
+  var index = -1;
+
+  var recurse = function(start, end) {
+    var mid = Math.floor((end - start) / 2) + start;
+
+    if(start >= end) {
+      return;
+    }
+
+    else if(array[mid] === target) {
+      index = mid;
+      return;
+    }
+
+    else if(array[mid] > target) {
+      recurse(start, mid);
+    }
+
+    else {
+      recurse(mid + 1, end);
+    }
+  }
+
+  recurse(0, array.length);
+  return index;
 }
