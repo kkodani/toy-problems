@@ -36,3 +36,62 @@ var Queue = function() {
     return inbox.size() + outbox.size();
   };
 };
+
+
+//
+//
+// /**
+//  * @constructor
+//  */
+// var Queue = function() {
+//     this.enq = [];
+//     this.deq = [];
+//     this.size = 0;
+// };
+//
+// /**
+//  * @param {number} x
+//  * @returns {void}
+//  */
+// Queue.prototype.push = function(x) {
+//     this.enq.push(x);
+//     this.size++;
+// };
+//
+// /**
+//  * @returns {void}
+//  */
+// Queue.prototype.pop = function() {
+//     if(this.deq.length > 0) {
+//         this.deq.pop();
+//     }
+//     else {
+//         while(this.enq.length > 0) {
+//             this.deq.push(this.enq.pop());
+//         }
+//         this.deq.pop();
+//     }
+//     this.size--;
+// };
+//
+// /**
+//  * @returns {number}
+//  */
+// Queue.prototype.peek = function() {
+//     if(this.deq.length > 0) {
+//         return this.deq[this.deq.length-1];
+//     }
+//     else {
+//         while(this.enq.length > 0) {
+//             this.deq.push(this.enq.pop());
+//         }
+//         return this.deq[this.deq.length-1];
+//     }
+// };
+//
+// /**
+//  * @returns {boolean}
+//  */
+// Queue.prototype.empty = function() {
+//     return this.size === 0;
+// };
